@@ -20,13 +20,13 @@ public class LoginPage {
         }
     }
 
-    public void setLoginName(String loginString) {
+    public void setLoginName(String inputString) {
         clickCookies();
-        driver.findElement(By.name("email")).sendKeys(loginString);
+        driver.findElement(By.name("email")).sendKeys(inputString);
     }
 
-    public void setLoginPassword(String loginString) {
-        driver.findElement(By.name("password")).sendKeys(loginString);
+    public void setLoginPassword(String inputString) {
+        driver.findElement(By.name("password")).sendKeys(inputString);
     }
 
     public void clickSubmitButton() {
