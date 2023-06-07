@@ -21,34 +21,35 @@ public class HomePageTest {
     }
 
     @Test
-    public void shouldMakeClickOnLoginButton() {
+    public void shouldMakeClickOnLoginButton() throws InterruptedException {
         String expectedUrl = "https://simplyboutique.cz/prihlaseni?back=my-account";
         this.homePage.clickLogin();
         Assertions.assertEquals(expectedUrl, this.driver.getCurrentUrl());
+        Thread.sleep(5000);
         this.driver.quit();
     }
-
     @Test
-    public void shouldMakeClickOnRegisterButton() {
+    public void shouldMakeClickOnRegisterButton() throws InterruptedException {
         String expectedUrl = "https://simplyboutique.cz/prihlaseni?create_account=1";
         this.homePage.clickRegister();
         Assertions.assertEquals(expectedUrl, this.driver.getCurrentUrl());
+        Thread.sleep(5000);
         this.driver.quit();
     }
-
     @Test
-    public void shouldMakeClickOnSearchButton() {
+    public void shouldMakeClickOnSearchButton() throws InterruptedException {
         this.homePage.clickSearch();
         String expectedString = this.driver.findElement(By.xpath("//div[@class='search-widget open']")).getAttribute("visibility");
         Assertions.assertNull(expectedString);
+        Thread.sleep(5000);
         this.driver.quit();
     }
-
     @Test
-    public void shouldMakeClickOnMyWishlistButton() {
+    public void shouldMakeClickOnMyWishlistButton() throws InterruptedException {
         String expectedUrl = "https://simplyboutique.cz/module/an_wishlist/list";
         this.homePage.clickMyWishList();
         Assertions.assertEquals(expectedUrl, this.driver.getCurrentUrl());
+        Thread.sleep(5000);
         this.driver.quit();
     }
 }

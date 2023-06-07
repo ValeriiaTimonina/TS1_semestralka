@@ -1,7 +1,7 @@
 TODO LIST:
-1. CategoryTest
+1. ~~CategoryTest~~
 2. CheckoutTest
-3. HomeTest
+3. ~~HomeTest~~
 4. LoginTest
 5. ProductTest
 6. ProfileTest
