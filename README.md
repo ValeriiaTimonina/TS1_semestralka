@@ -1,2 +1,12 @@
 TODO LIST:
-1.
+1. CategoryTest
+2. CheckoutTest
+3. HomeTest
+4. LoginTest
+5. ProductTest
+6. ProfileTest
+7. RegisterTest
+8. SearchTest
+9. ShoppingCartTest
+10. SpecialsTest
+11. TestPage
