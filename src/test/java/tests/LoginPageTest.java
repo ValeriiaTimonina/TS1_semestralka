@@ -1,15 +1,15 @@
 package tests;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
-import pages.items.Category;
+import pages.LoginPage;
 
-public class CategoryTest {
+
+public class LoginPageTest {
     WebDriver driver;
-    Category category;
+    LoginPage loginPage;
 
     @BeforeEach
     public void browserWindowCreation() {
@@ -17,21 +17,21 @@ public class CategoryTest {
         this.driver.manage().window().setPosition(new Point(0, 0));
         this.driver.manage().window().setSize(new Dimension(1920, 1080));
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        this.category = new Category(driver, "https://simplyboutique.cz/64-panske");
+        this.loginPage = new LoginPage(driver, "https://simplyboutique.cz/prihlaseni?back=my-account");
     }
 
     @AfterEach
-    public void closeBrowserWindow(){ driver.quit(); }
+    public void closeBrowserWindow() { driver.quit(); }
 
     @Test
-    public void shouldSortItemsInDescendingOrder() throws InterruptedException {
-        String expectedUrl = "https://simplyboutique.cz/64-panske?order=product.price.desc";
-        category.sortBy();
+    public void loginTest() throws InterruptedException {
+        loginPage.setLoginName("uporoego@fel.cvut.cz");
+        loginPage.setLoginPassword("1234567890");
+        loginPage.clickSubmitButton();
+        String expectedUrl = "https://simplyboutique.cz/muj-ucet";
         Thread.sleep(5000);
         assertEquals(expectedUrl, driver.getCurrentUrl());
-    }
-    @Test
-    public void shouldReturnItemsLinks() {
-        assertEquals(12, category.getResultsLinks(12).size());
+        Thread.sleep(2000);
     }
 }
+
