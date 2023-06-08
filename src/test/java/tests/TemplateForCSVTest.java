@@ -1,3 +1,5 @@
+package tests;
+
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,7 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.items.TemplateForCSV;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
