@@ -15,7 +15,7 @@ public class LoginPage {
     public void clickCookies() {
         try {
             driver.findElement(By.id("AcceptAll")).click();
-        } catch (Exception var2) {
+        } catch (Exception e) {
             System.out.print("");
         }
     }
